@@ -1,7 +1,299 @@
 :root {
+  --box-width: 100px;
+  --box-offset: 1rem;
+  --box-calculated-width: calc(var(--box-width) + var(--box-offset));
+
+  --flower-color: #f0f;
+  --flower-animation-time: 4s;
+  --flower-animation-delay: calc(var(--flower-animation-time) / 20);
 }
 
 * {
   padding: 0;
   margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* Animation classes */
+.box-assignment-1 {
+  width: var(--box-width);
+  height: var(--box-width);
+  margin: var(--box-offset);
+
+  background-color: red;
+
+  /* Animation */
+  animation: move-box 4s linear 1s alternate;
+  animation-iteration-count: 4;
+}
+
+.circle-assignment-2 {
+  width: var(--box-width);
+  height: var(--box-width);
+  margin: var(--box-offset);
+  border-radius: 50%;
+
+  position: absolute;
+  /* left: -150%; */
+  bottom: 0;
+
+  background-color: red;
+
+  /* Animation */
+  animation: move-circle 6s linear 1s infinite;
+  /* animation-iteration-count: 4; */
+}
+
+.wheel-assignment-3 {
+  width: var(--box-width);
+  height: var(--box-width);
+  margin: var(--box-offset);
+  border-radius: 50%;
+
+  position: absolute;
+  /* left: -150%; */
+  bottom: 0;
+
+  background-image: url(../svg/wood-wagon-wheel-silhouette-by-Vexels.svg);
+  background-size: cover;
+
+  /* background-color: red; */
+  border: darkslategray 4px solid;
+
+  /* Animation */
+  animation: move-wheel 6s linear 1s infinite;
+  /* animation-iteration-count: 4; */
+}
+
+.loading-assignment-4 {
+}
+
+.loading-flower {
+  width: 4rem;
+  height: 4rem;
+  margin: 2rem;
+
+  /* border: 1px solid darkslategray; */
+  border-radius: 20rem 1.2rem;
+
+  opacity: 0;
+
+  margin-bottom: 2rem;
+
+  position: absolute;
+  top: calc(50% - (var(--box-calculated-width) / 2));
+  left: calc(50% - (var(--box-calculated-width) / 2));
+
+  transform-origin: bottom center;
+
+  animation: loading var(--flower-animation-time) linear infinite;
+}
+
+.loading-spinning-thing {
+  width: 10rem;
+  height: 10rem;
+  margin: 2rem;
+
+  border: 1px solid darkslategray;
+  border-radius: 25%;
+
+  position: fixed;
+  top: calc(50% - (var(--box-calculated-width) / 2));
+  left: calc(50% - (var(--box-calculated-width) / 2));
+
+  animation: loading-ball 2s linear infinite;
+}
+
+.loading-ball {
+  width: 1rem;
+  height: 0rem;
+  margin: 2rem;
+
+  border: 10px solid darkslategray;
+  border-radius: 50%;
+
+  position: fixed;
+  top: calc(50% - (var(--box-calculated-width) / 2));
+  left: calc(50% - (var(--box-calculated-width) / 2));
+
+  animation: loading-ball 2s linear infinite;
+}
+
+/* Animation keyframes */
+@keyframes move-box {
+  0% {
+    transform: translate(0, 0);
+    background-color: red;
+  }
+  25% {
+    transform: translateX(calc(50vw - (var(--box-calculated-width) / 2)));
+    background-color: yellow;
+  }
+  50% {
+    transform: translate(
+      calc(50vw - (var(--box-calculated-width) / 2)),
+      calc(50vh - (var(--box-calculated-width) / 2))
+    );
+    background-color: cyan;
+  }
+  75% {
+    transform: translate(0vw, calc(50vh - (var(--box-calculated-width) / 2)));
+    background-color: greenyellow;
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes move-circle {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 300%;
+  }
+}
+
+@keyframes move-wheel {
+  0% {
+    left: -150%;
+    transform: rotate(0deg);
+  }
+  100% {
+    left: 300%;
+    transform: rotate(calc(360deg * 8));
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(360deg);
+    opacity: 100;
+  }
+  99% {
+    opacity: 100;
+  }
+  100% {
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes loading-ball {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation IDs */
+#loading-1 {
+  rotate: calc(36deg * 0);
+  background-color: var(--flower-color);
+  animation-delay: calc(var(--flower-animation-delay) * 0);
+}
+
+#loading-2 {
+  rotate: calc(36deg * 1);
+  background-color: var(--flower-color);
+  animation-delay: calc(var(--flower-animation-delay) * 1);
+}
+
+#loading-3 {
+  rotate: calc(36deg * 2);
+  background-color: var(--flower-color);
+  animation-delay: calc(var(--flower-animation-delay) * 2);
+}
+
+#loading-4 {
+  rotate: calc(36deg * 3);
+  background-color: var(--flower-color);
+  animation-delay: calc(var(--flower-animation-delay) * 3);
+}
+
+#loading-5 {
+  rotate: calc(36deg * 4);
+  background-color: var(--flower-color);
+  animation-delay: calc(var(--flower-animation-delay) * 4);
+}
+
+#loading-6 {
+  rotate: calc(36deg * 5);
+  background-color: var(--flower-color);
+  animation-delay: calc(var(--flower-animation-delay) * 5);
+}
+
+#loading-7 {
+  rotate: calc(36deg * 6);
+  background-color: var(--flower-color);
+  animation-delay: calc(var(--flower-animation-delay) * 6);
+}
+
+#loading-8 {
+  rotate: calc(36deg * 7);
+  background-color: var(--flower-color);
+  animation-delay: calc(var(--flower-animation-delay) * 7);
+}
+
+#loading-9 {
+  rotate: calc(36deg * 8);
+  background-color: var(--flower-color);
+  animation-delay: calc(var(--flower-animation-delay) * 8);
+}
+
+#loading-10 {
+  rotate: calc(36deg * 9);
+  background-color: var(--flower-color);
+  animation-delay: calc(var(--flower-animation-delay) * 9);
+}
+
+/* BALL */
+/* Animation IDs */
+#loading-ball-1 {
+  rotate: calc(36deg * 0);
+}
+
+#loading-ball-2 {
+  rotate: calc(36deg * 1);
+}
+
+#loading-ball-3 {
+  rotate: calc(36deg * 2);
+}
+
+#loading-ball-4 {
+  rotate: calc(36deg * 3);
+}
+
+#loading-ball-5 {
+  rotate: calc(36deg * 4);
+}
+
+#loading-ball-6 {
+  rotate: calc(36deg * 5);
+}
+
+#loading-ball-7 {
+  rotate: calc(36deg * 6);
+}
+
+#loading-ball-8 {
+  rotate: calc(36deg * 7);
+}
+
+#loading-ball-9 {
+  rotate: calc(36deg * 8);
+}
+
+#loading-ball-10 {
+  rotate: calc(36deg * 9);
 }
