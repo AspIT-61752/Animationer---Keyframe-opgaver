@@ -43,7 +43,7 @@ body {
   background-color: red;
 
   /* Animation */
-  animation: move-circle 6s linear 1s infinite;
+  animation: move-circle 6s linear infinite;
   /* animation-iteration-count: 4; */
 }
 
@@ -64,7 +64,7 @@ body {
   border: darkslategray 4px solid;
 
   /* Animation */
-  animation: move-wheel 6s linear 1s infinite;
+  animation: move-wheel 6s linear infinite;
   /* animation-iteration-count: 4; */
 }
 
