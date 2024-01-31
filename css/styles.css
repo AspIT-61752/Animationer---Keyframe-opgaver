@@ -3,7 +3,7 @@
   --box-offset: 1rem;
   --box-calculated-width: calc(var(--box-width) + var(--box-offset));
 
-  --flower-color: #f0f;
+  --flower-color: rgb(216, 176, 101);
   --flower-animation-time: 4s;
   --flower-animation-delay: calc(var(--flower-animation-time) / 20);
 }
@@ -198,63 +198,85 @@ body {
 /* Animation IDs */
 #loading-1 {
   rotate: calc(36deg * 0);
-  background-color: var(--flower-color);
   animation-delay: calc(var(--flower-animation-delay) * 0);
 }
 
 #loading-2 {
   rotate: calc(36deg * 1);
-  background-color: var(--flower-color);
   animation-delay: calc(var(--flower-animation-delay) * 1);
 }
 
 #loading-3 {
   rotate: calc(36deg * 2);
-  background-color: var(--flower-color);
   animation-delay: calc(var(--flower-animation-delay) * 2);
 }
 
 #loading-4 {
   rotate: calc(36deg * 3);
-  background-color: var(--flower-color);
   animation-delay: calc(var(--flower-animation-delay) * 3);
 }
 
 #loading-5 {
   rotate: calc(36deg * 4);
-  background-color: var(--flower-color);
   animation-delay: calc(var(--flower-animation-delay) * 4);
 }
 
 #loading-6 {
   rotate: calc(36deg * 5);
-  background-color: var(--flower-color);
   animation-delay: calc(var(--flower-animation-delay) * 5);
 }
 
 #loading-7 {
   rotate: calc(36deg * 6);
-  background-color: var(--flower-color);
   animation-delay: calc(var(--flower-animation-delay) * 6);
 }
 
 #loading-8 {
   rotate: calc(36deg * 7);
-  background-color: var(--flower-color);
   animation-delay: calc(var(--flower-animation-delay) * 7);
 }
 
 #loading-9 {
   rotate: calc(36deg * 8);
-  background-color: var(--flower-color);
   animation-delay: calc(var(--flower-animation-delay) * 8);
 }
 
 #loading-10 {
   rotate: calc(36deg * 9);
-  background-color: var(--flower-color);
   animation-delay: calc(var(--flower-animation-delay) * 9);
 }
+
+.loading-flower:nth-of-type(1n + 0) {
+  background-color: var(--flower-color);
+}
+
+/* .loading-flower:nth-of-type(2n + 1) {
+  background-color: blue;
+}
+
+.loading-flower:nth-of-type(2n + 0) {
+  background-color: blue; 
+} */
+
+/* .loading-flower:nth-of-type(5n + 0) {
+  background-color: blue;
+}
+
+.loading-flower:nth-of-type(5n + 1) {
+  background-color: red;
+}
+
+.loading-flower:nth-of-type(5n + 3) {
+  background-color: green;
+}
+
+.loading-flower:nth-of-type(5n + 4) {
+  background-color: purple;
+}
+
+.loading-flower:nth-of-type(5n + 5) {
+  background-color: coral;
+} */
 
 /* BALL */
 /* Animation IDs */
@@ -296,4 +318,37 @@ body {
 
 #loading-ball-10 {
   rotate: calc(36deg * 9);
+}
+
+.bg {
+  background-color: whitesmoke;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+
+  background-color: rgba(36, 106, 185, 0.5);
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.menu ul li {
+  color: rgb(177, 37, 37);
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  list-style: none;
 }
